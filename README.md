@@ -1,17 +1,20 @@
-1. git status
-2. git add [files...] - добовляет файлы в state
-3. git commit -m "comment"
-4. git log / git log --oneline
-5. git push [rep_link] [branch_name]
+1. git status – Показать текущее состояние репозитория: изменённые, добавленные, неотслеживаемые файлы  
+2. git add [files...] - Добовляет файлы в state
+3. git commit -m "comment"  – Зафиксировать изменения с комментарием  
+4. git log / git log --oneline – Показать историю коммитов / краткий формат
+5. git push [rep_link] [branch_name] – Отправить изменения в удалённый репозиторий  
 
-6. git reset
-7. git diff
-8. git reset --hard
-9. папка .gitignore
+6. git reset – Отменить добавление файлов в stage, вернуть их в рабочее состояние
+7. git diff – Показать различия между текущими изменениями и последним коммитом
+8. git reset --hard – Полностью откатить изменения, включая рабочие файлы и stage  
+9. папка .gitignore – Список файлов и папок, которые Git должен игнорировать
 
-10. git branch - вывести список веток гит. Зелёной отображается текущая.
-11. git branch [branch_name] - создать новую ветку в гит
-12. git checkout [branch_name] - перейти в ветку ... 
-13. git pull [rep_link] [branch_name]
-14. git branch -d [branch_name] - удалить ветку с локального репозитория.
-14. git merge [branch_name] - перенести изменения из [branch_name] в текущую ветку
+10. git branch - Вывести список веток гит. Зелёной отображается текущая.
+11. git branch [branch_name] - Создать новую ветку в гит
+12. git checkout [branch_name] - Перейти в ветку ... 
+    git checkout -b [branch_name] - Создать ветку и перейти в созданную ветку ... 
+13. git pull [rep_link] [branch_name] – Получить и объединить изменения из удалённого репозитория  
+14. git branch -d [branch_name] - Удалить ветку с локального репозитория.
+14. git merge [branch_name] - Перенести изменения из [branch_name] в текущую ветку
+
+15. git clone [repositoriy_link] - Клонировать ранее созданный репозиторий
