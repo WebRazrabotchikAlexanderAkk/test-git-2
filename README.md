@@ -39,8 +39,9 @@ git init
 ### 1. `git remote add origin <адрес_репозитория>`
 Связывает локальный репозиторий с удалённым (например, GitHub или GitLab).
 
-git remote add origin https://github.com/username/project.git
-
+```
+git remote add origin 
+```
 ⚠️ Выполняется один раз после `git init`, если не клонируете репозиторий.
 
 ---
@@ -49,7 +50,9 @@ git remote add origin https://github.com/username/project.git
 Клонирует удалённый репозиторий на ваш компьютер.  
 Создаёт папку, инициализирует `.git`, и подключает `origin`.
 
-git clone https://github.com/username/project.git
+```
+git clone 
+```
 
 ✅ Альтернатива `git init + git remote add`. Используется чаще, если проект уже существует удалённо.
 
@@ -60,6 +63,10 @@ git clone https://github.com/username/project.git
 ### 3. `.gitignore`
 Файл, где перечислены файлы и папки, которые Git не должен отслеживать:  
 логи, временные файлы, зависимости и т.д.
+
+```
+.gitignore
+```
 
 Пример:
 node_modules/
@@ -80,7 +87,9 @@ node_modules/
 - Добавленные в stage (подготовлены к коммиту)  
 - Неотслеживаемые файлы  
 
+```
 git status
+```
 
 ✅ Запускайте перед `add` и `commit`, чтобы понимать, что именно меняете.
 
@@ -91,9 +100,19 @@ git status
 ### 5. `git add <файлы>`
 Добавляет файлы в **staging area**.
 
+```
+git add .
+```
+
+```
 git add file.txt # добавить один файл
+```
+```
 git add . # добавить все изменения
+```
+```
 git add src/ # добавить всё из папки src
+```
 
 ❗ Не добавляет файлы из `.gitignore`.
 
@@ -105,7 +124,13 @@ git add src/ # добавить всё из папки src
 Показывает различия между текущими изменениями и последним коммитом.
 
 git diff # не добавленные в stage изменения
+```
+git diff
+```
 git diff --staged # уже добавленные в stage
+```
+git diff --staged
+```
 
 ✅ Проверяйте перед коммитом.
 
@@ -116,7 +141,9 @@ git diff --staged # уже добавленные в stage
 ### 7. `git commit -m "сообщение"`
 Фиксирует подготовленные изменения с пояснением.
 
-git commit -m "Добавил главную страницу"
+```
+git commit -m "Добавил"
+```
 
 ✅ Каждый коммит — точка восстановления. Пишите понятные сообщения.
 
@@ -126,9 +153,19 @@ git commit -m "Добавил главную страницу"
 
 ### 8. `git log / git log --oneline`
 
+
 git log # подробная история
+```
+git log #
+```
 git log --oneline # краткая форма
+```
+git log --oneline
+```
 git log --oneline -10 # последние 10 коммитов
+```
+git log --oneline -10
+```
 
 ✅ Помогает понять, кто и что изменил.
 
@@ -139,7 +176,9 @@ git log --oneline -10 # последние 10 коммитов
 ### 9. `git push origin <ветка>`
 Отправляет локальные коммиты в удалённый репозиторий.
 
+```
 git push origin main
+```
 
 ✅ Выполняйте после `commit`, чтобы синхронизировать проект.
 
@@ -148,7 +187,9 @@ git push origin main
 ### 10. `git pull origin <ветка>`
 Получает новые коммиты из удалённого репозитория и сливает их с текущей веткой.
 
+```
 git pull origin main
+```
 
 ✅ Делайте `pull` перед началом работы, чтобы быть в курсе изменений.  
 `git pull = git fetch + git merge`
@@ -160,28 +201,36 @@ git pull origin main
 ### 11. `git branch`
 Показывает список локальных веток. Текущая отмечена `*`.
 
+```
 git branch
+```
 
 ---
 
 ### 12. `git branch <имя>`
 Создаёт новую ветку из текущей.
 
+```
 git branch feature/login
+```
 
 ---
 
 ### 13. `git checkout <ветка>`
 Переключается на другую ветку.
 
+```
 git checkout feature/login
+```
 
 ---
 
 ### 14. `git checkout -b <имя>`
 Создаёт ветку и сразу переключается в неё.
 
+```
 git checkout -b feature/login
+```
 
 ✅ Удобно начинать новую задачу в отдельной ветке.
 
@@ -190,8 +239,10 @@ git checkout -b feature/login
 ### 15. `git merge <ветка>`
 Сливает указанную ветку в текущую.
 
+```
 git checkout main
 git merge feature/login
+```
 
 ✅ Используется при завершении задачи для объединения изменений.
 
@@ -200,7 +251,9 @@ git merge feature/login
 ### 16. `git branch -d <ветка>`
 Удаляет локальную ветку после слияния.
 
+```
 git branch -d feature/login
+```
 
 ❗ Используйте `-D` для принудительного удаления, если есть неслитые изменения.
 
@@ -211,7 +264,9 @@ git branch -d feature/login
 ### 17. `git reset <файл>`
 Убирает файл из staging area, но сохраняет изменения в рабочей директории.
 
+```
 git reset file.txt
+```
 
 ✅ Используйте, если случайно сделали `git add`.
 
@@ -220,7 +275,9 @@ git reset file.txt
 ### 18. `git reset --hard`
 **Опасная команда!** Полностью откатывает все незакоммиченные изменения.
 
+```
 git reset --hard
+```
 
 ❗ Все локальные изменения будут потеряны.
 
@@ -231,7 +288,9 @@ git reset --hard
 ### 19. `git remote -v`
 Показывает подключённые репозитории и их URL.
 
+```
 git remote -v
+```
 
 ✅ Полезно проверить, куда идёт `push`.
 
@@ -240,7 +299,9 @@ git remote -v
 ### 20. `git fetch`
 Загружает изменения из удалённого репозитория без слияния.
 
+```
 git fetch
+```
 
 ✅ Позволяет просмотреть изменения до `merge`.  
 `git pull = git fetch + git merge`
@@ -250,34 +311,50 @@ git fetch
 ## 🔄 Типичный рабочий процесс
 
 1. Клонируем проект (или инициализируем)
+```
 git clone https://github.com/username/project.git
+```
 
 2. Создаём новую ветку
+```
 git checkout -b feature/header
+```
 
 3. Работаем и добавляем изменения
+```
 git status
 git add .
 git diff --staged
+```
 
 4. Сохраняем изменения
+```
 git commit -m "Добавил шапку сайта"
+```
 
 5. Получаем обновления
+```
 git checkout main
 git pull origin main
+```
 
 6. Мержим актуальное main в свою ветку
+```
 git checkout feature/header
 git merge main
+```
 
 7. Отправляем изменения
+```
 git push origin feature/header
+```
 
 8. После ревью — мержим в main
+```
 git checkout main
 git merge feature/header
 git push origin main
+```
 
 9. Удаляем ветку локально
 git branch -d feature/header
