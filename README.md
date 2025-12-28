@@ -269,7 +269,7 @@ git branch -d feature/login
 ```
 git reset
 ```
-или (новый синтаксис) `git restore --staged .`
+или новый синтаксис, читается лучше `git restore --staged .` --- git restore --staged . — новый, более читаемый синтаксис: работает только со staging и файлами, в отличие от git reset который ещё умеет переписывать историю коммитов если добавить --hard.
 ```
 git restore --staged .
 ```
