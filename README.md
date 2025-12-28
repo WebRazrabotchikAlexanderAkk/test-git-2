@@ -156,7 +156,7 @@ git commit -m "Добавил"
 
 git log # подробная история
 ```
-git log #
+git log
 ```
 git log --oneline # краткая форма
 ```
